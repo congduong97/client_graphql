@@ -1,14 +1,15 @@
 import React from 'react';
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, View} from 'react-native';
 
 import {createHttpLink} from 'apollo-link-http';
 import ApolloClient from 'apollo-client';
 import {InMemoryCache} from 'apollo-cache-inmemory';
 import {ApolloProvider} from '@apollo/react-hooks';
 import Home from './Home';
+import Form from './Form';
 
 const client = new ApolloClient({
-  link: createHttpLink({uri: 'http://localhost:4000/graphql'}),
+  link: createHttpLink({uri: 'http://localhost:4000'}),
   cache: new InMemoryCache(),
 });
 
@@ -16,7 +17,10 @@ const App = () => {
   return (
     <ApolloProvider client={client}>
       <SafeAreaView>
-        <Home />
+        <View>
+          <Form />
+          <Home />
+        </View>
       </SafeAreaView>
     </ApolloProvider>
   );

@@ -23,6 +23,8 @@ const Home = () => {
     return <Text>'Loading...'</Text>;
   }
 
+  console.log('data', data);
+
   return (
     <FlatList
       contentContainerStyle={{
