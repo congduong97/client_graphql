@@ -23,7 +23,7 @@ const Home = () => {
     return <Text>'Loading...'</Text>;
   }
 
-  console.log('data', data);
+  if (error) return <Text>Error {error.message} </Text>;
 
   return (
     <FlatList
